@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acidentes PRF 2025 – Análise Completa</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>🚛 Acidentes em Rodovias Federais – 2025</h1>
+    <div class="sub">Dados públicos da PRF • Limpeza Python • Visualizações Vega-Lite</div>
+    <p>Este site apresenta 9 análises visuais em gráficos, utilizando dados extraídos do dataset limpo de acidentes de 2025. Ferramentas utilizadas no processo são: 
+    Google colaboratory utilizando a biblioteca Pandas (Python) para limpeza dos dados, github como repositorio de dados, Observable HQ utilizando
+    a biblioteca Vega-Lite para trahnsformar os dados em graficos por meio de javascript.</p>
+    <div id="graficos-container"></div>
+    <footer>
+        Projeto – Tratamento e visualização de dados.<br>
+        Fonte: Polícia Rodoviária Federal (Dados Abertos) 2025.
+    </footer>
+</div>
+<script src="graficos.js"></script>
+</body>
+</html>

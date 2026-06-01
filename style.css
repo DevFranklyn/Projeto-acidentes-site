@@ -1,0 +1,71 @@
+* { box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: rgb(9, 1, 59);
+    margin: 0;
+    padding: 20px;
+    color: rgb(240, 236, 8);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgb(19, 1, 124);
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    padding: 30px 25px;
+}
+h1 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    border-left: 6px solid steelblue;
+    padding-left: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.sub {
+    color: rgb(255, 253, 253);
+    margin-left: 26px;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+.chart-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+    padding: 15px 20px 20px 20px;
+    border: 1px solid lightgray;
+}
+.chart-card h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: midnightblue;
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 8px;
+}
+.chart-container {
+    min-height: 420px;
+    margin-top: 10px;
+}
+.insight {
+    background: lavender;
+    padding: 12px 18px;
+    border-radius: 14px;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: darkslateblue;
+    border-left: 4px solid steelblue;
+}
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: rgb(255, 253, 253);
+    border-top: 1px solid lightgray;
+    padding-top: 20px;
+}
+@media (max-width: 700px) {
+    .container { padding: 20px; }
+    .chart-card { padding: 12px; }
+}
