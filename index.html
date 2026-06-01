@@ -12,15 +12,25 @@
 </head>
 <body>
 <div class="container">
-    <h1>🚛 Acidentes em Rodovias Federais – 2025</h1>
-    <div class="sub">Dados públicos da PRF • Limpeza Python • Visualizações Vega-Lite</div>
-    <p>Este site apresenta 9 análises visuais em gráficos, utilizando dados extraídos do dataset limpo de acidentes de 2025. Ferramentas utilizadas no processo são: 
-    Google colaboratory utilizando a biblioteca Pandas (Python) para limpeza dos dados, github como repositorio de dados, Observable HQ utilizando
-    a biblioteca Vega-Lite para trahnsformar os dados em graficos por meio de javascript.</p>
+    <div class="header">
+        <h1>🚛 Acidentes em Rodovias Federais – 2025</h1>
+        <div class="sub">Dados públicos da PRF • Limpeza com Python • Visualizações Vega-Lite</div>
+    </div>
+
+    <div class="intro">
+        <p>Este site apresenta <strong>9 análises visuais interativas</strong>, utilizando dados extraídos do dataset limpo de acidentes de 2025. As ferramentas utilizadas no processo foram:</p>
+        <ul>
+            <li><strong>Google Colaboratory</strong> + <strong>Pandas</strong> – limpeza e preparação dos dados</li>
+            <li><strong>GitHub</strong> – repositório do dataset e hospedagem do site</li>
+            <li><strong>ObservableHQ</strong> + <strong>Vega-Lite</strong> – criação dos gráficos interativos</li>
+        </ul>
+    </div>
+
     <div id="graficos-container"></div>
+
     <footer>
-        Projeto – Tratamento e visualização de dados.<br>
-        Fonte: Polícia Rodoviária Federal (Dados Abertos) 2025.
+        📊 Projeto acadêmico – Tratamento e visualização de dados<br>
+        🗺️ Fonte: Polícia Rodoviária Federal (Dados Abertos) – Ano 2025
     </footer>
 </div>
 <script src="graficos.js"></script>
