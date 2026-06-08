@@ -4,47 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Acidentes PRF 2025</title>
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
+    <div class="top-bar">
+      <div class="theme-toggle">
+        <button id="theme-switch" class="theme-btn" aria-label="Alternar tema claro/escuro">
+          <span class="light-icon">☀</span>
+          <span class="dark-icon" style="display:none;">☾</span>
+        </button>
+      </div>
+    </div>
+
     <div class="header">
-      <h1>🚛 Acidentes em Rodovias Federais – 2025</h1>
-      <div class="sub">Dados públicos da PRF • Limpeza com Python • Visualizações Vega-Lite</div>
+      <h1>Acidentes em Rodovias Federais - 2025</h1>
+      <div class="sub">Dados publicos da PRF - Limpeza com Python - Visualizacoes Vega-Lite</div>
     </div>
 
-    <div class="intro">
+    <details class="intro">
+      <summary>Sobre o projeto (clique para ver detalhes)</summary>
       <p>
-        Colaboradores: Frankliyn Martins / Github https://github.com/DevFranklyn<br>
-        Yasmym Fabricio / Github https://github.com/Devyas-05<br>
+        Colaboradores: Franklyn Martins - Github: https://github.com/DevFranklyn<br>
+        Yasmym Fabricio - Github: https://github.com/Devyas-05<br>
         Professor: Daniel Marques<br>
-        Instituição: Uninassau<br><br>
-        Parte 3 do projeto Google colaboratory com Pandas e graficos com Obersavable HQ.<br>
-        Este projeto aplica limpeza, análise e visualização de dados em um conjunto de dados reais, os acidentes registrados pela Polícia Rodoviária Federal (PRF) nas rodovias federais brasileiras durante o ano de 2025.<br><br>
-        Parte 1: Carregamento dos dados brutos da PRF (584 mil linhas) no Google Colab com pandas. Limpeza: remoção de duplicatas, valores nulos e seleção das 17 colunas mais relevantes. Geração de gráficos iniciais e exportação do dataset limpo para CSV.<br><br>
-        Parte 2: Importação do CSV limpo no ObservableHQ via fetch. Criação de 9 gráficos interativos com Vega-Lite abordando: horário, dia da semana, estado, causas, tipo de acidente, classificação, rodovia, sexo e idade. Cada gráfico acompanhado de interpretação e conclusão.<br><br>
-        Parte 3: Criação de um site estático com HTML, CSS e JavaScript, publicação do site no GitHub Pages. Adição dos colaboradores ao repositório.
+        Instituicao: Uninassau<br><br>
+        Parte 3 do projeto: Google Colaboratory com Pandas e graficos com ObservableHQ.<br>
+        Este projeto aplica limpeza, analise e visualizacao de dados em um conjunto de dados reais, os acidentes registrados pela Policia Rodoviaria Federal (PRF) nas rodovias federais brasileiras durante o ano de 2025.<br><br>
+        Parte 1: Carregamento dos dados brutos da PRF (584 mil linhas) no Google Colab com pandas. Limpeza: remocao de duplicatas, valores nulos e selecao das 17 colunas mais relevantes. Geracao de graficos iniciais e exportacao do dataset limpo para CSV.<br><br>
+        Parte 2: Importacao do CSV limpo no ObservableHQ via fetch. Criacao de 9 graficos interativos com Vega-Lite abordando: horario, dia da semana, estado, causas, tipo de acidente, classificacao, rodovia, sexo e idade. Cada grafico acompanhado de interpretacao e conclusao.<br><br>
+        Parte 3: Criacao de um site estatico com HTML, CSS e JavaScript, publicacao do site no GitHub Pages. Adicao dos colaboradores ao repositorio.
       </p>
-
       <ul>
-        <li><strong>Google Colaboratory</strong> + <strong>Pandas</strong> – limpeza e preparação dos dados</li>
-        <li><strong>GitHub</strong> – repositório do dataset e hospedagem do site</li>
-        <li><strong>ObservableHQ</strong> + <strong>Vega-Lite</strong> – criação dos gráficos</li>
+        <li>Google Colaboratory + Pandas – limpeza e preparacao dos dados</li>
+        <li>GitHub – repositorio do dataset e hospedagem do site</li>
+        <li>ObservableHQ + Vega-Lite – criacao dos graficos</li>
       </ul>
-    </div>
+      <div class="links-rapidos">
+        <a href="https://github.com/DevFranklyn/Projeto-acidentes-2025" target="_blank" rel="noopener">GitHub do projeto</a>
+        <a href="https://raw.githubusercontent.com/DevFranklyn/Projeto-acidentes-2025/refs/heads/main/acidentes_2025_limpo.csv" target="_blank" rel="noopener">Dados limpos (CSV)</a>
+      </div>
+    </details>
 
-    <div id="graficos-container"></div>
+    <div id="graficos-container">
+      <div class="loader">Carregando dados da PRF... Aguarde.</div>
+    </div>
 
     <footer>
-      📊 Projeto acadêmico – Tratamento e visualização de dados<br>
-      🗺️ Fonte: Polícia Rodoviária Federal (Dados Abertos) – Ano 2025 👨🏻‍🎓 Franklyn Martins e Yasmym Fabricio
+      Projeto academico – Tratamento e visualizacao de dados<br>
+      Fonte: Policia Rodoviaria Federal (Dados Abertos) – Ano 2025 - Franklyn Martins e Yasmym Fabricio
     </footer>
   </div>
 
-  <script src="graficos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6" defer></script>
+  <script src="https://d3js.org/d3.v7.min.js" defer></script>
+  <script src="graficos.js" defer></script>
 </body>
 </html>
