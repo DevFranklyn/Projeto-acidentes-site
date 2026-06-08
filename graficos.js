@@ -145,10 +145,10 @@ function agregarIdade(dados) {
 
 async function renderGrafico(elementId, spec) {
     try {
-        await vegaEmbed(`#${elementId}`, spec, { actions: false });
+        await vegaEmbed(`#${elementId}`, spec, { mode: 'vega-lite', actions: false });
     } catch (err) {
         console.error(`Erro no gráfico ${elementId}:`, err);
-        document.getElementById(elementId).innerHTML = `<div style="color:red;">Erro ao renderizar gráfico.</div>`;
+        document.getElementById(elementId).innerHTML = `<div style="color:red; padding: 20px;">Erro ao renderizar gráfico. Veja o console (F12).</div>`;
     }
 }
 
@@ -165,7 +165,6 @@ d3.csv(csvUrl, d3.autoType).then(data => {
     const dadosTipo = agregarTopTipoAcidente(data);
     const dadosIdade = agregarIdade(data);
 
-    // --- Lógica dos KPIs (Dados Básicos) ---
     const totalAcidentes = data.length;
     const ufMaisPerigosa = dadosUF.length > 0 ? dadosUF[0] : { uf: '-', total: 0 };
     const causaPrincipal = dadosCausas.length > 0 ? dadosCausas[0] : { causa: '-', total: 0 };
@@ -202,7 +201,6 @@ d3.csv(csvUrl, d3.autoType).then(data => {
         `;
     }
 
-    // --- Lógica dos Gráficos ---
     const container = document.getElementById('graficos-container');
     if (!container) return;
     container.innerHTML = '';
@@ -224,8 +222,9 @@ d3.csv(csvUrl, d3.autoType).then(data => {
         card.className = 'chart-card';
         card.innerHTML = `<h2>${specItem.titulo}</h2><div id="${specItem.id}" class="chart-container"></div><div class="insight">${specItem.insight}</div>`;
         container.appendChild(card);
-
+        
         const spec = {
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
             data: { values: specItem.dados },
             mark: { type: 'bar', cornerRadiusTopRight: 6, cornerRadiusBottomRight: 6, color: specItem.cor },
             encoding: specItem.encoding,
@@ -238,6 +237,6 @@ d3.csv(csvUrl, d3.autoType).then(data => {
     console.error(err);
     const container = document.getElementById('graficos-container');
     if (container) {
-        container.innerHTML = `<div style="background:#ffe6e6; padding:20px; border-radius:16px; color:#a00;">Erro ao carregar dados: ${err.message}<br>Verifique se o arquivo CSV está no mesmo diretório.</div>`;
+        container.innerHTML = `<div style="background:#ffe6e6; padding:20px; border-radius:16px; color:#a00;">Erro ao carregar dados: ${err.message}<br>Verifique se o arquivo CSV está no mesmo diretório ou se há bloqueio CORS.</div>`;
     }
 });
